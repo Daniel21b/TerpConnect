@@ -1,0 +1,259 @@
+/**
+ * Root container styles
+ * Sets up the main application container with full viewport coverage
+ */
+.home-container {
+    margin: 0;
+    padding: 0;
+    background-color: #F6F6F6;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/**
+ * Navigation Components
+ * Includes styles for the floating nav bar and its child elements
+ */
+.floating-nav {
+    display: flex;
+    position: fixed;
+    top: 26px;
+    left: 50%;
+    width: 94%;
+    height: 7%;
+    transform: translateX(-50%);
+    background: #ffffff; 
+    border-radius: 18px;
+    justify-content: left;
+    gap: 4px;
+}
+
+/* Navigation typography */
+.home-container h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+}
+
+.home-container li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    gap: 4rem;
+    color: black;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.login-button {
+    background-color: #E41936;
+    color: #ffffff;
+    border: none;
+    border-radius: 23px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 2rem;
+    height: 35px;
+    width: 130px;
+
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 5rem;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 0.8rem;
+    height: 60%;
+    margin-left: 2rem;
+
+}
+
+/**
+ * Search functionality
+ * Styles for search bar and its icon
+ */
+.search-container {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 4rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.search-bar {
+  padding: 8px 16px 8px 35px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  width: 350px;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #E7E7E7;
+}
+
+.search-bar:focus {
+  border-color: #E41936;
+  box-shadow: 0 0 0 2px rgba(228, 25, 54, 0.1);
+}
+
+.search-bar::placeholder {
+    opacity: 0.7;
+}
+
+.search-bar:focus::placeholder {
+    opacity: 0;
+}
+
+/**
+ * Main Content Section
+ * Layout and positioning for the primary content area
+ */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 5rem;
+    margin-top: -5rem;
+}
+
+.main-content-text {
+    flex: 1;
+    margin-left: -2rem;
+}
+
+.main-content-text h4{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: -2.5rem;
+    text-align: center;
+    
+}
+
+.main-content-text p{
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.main-content-text span{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+/**
+ * About Us Section
+ * Overlay text on banner image with positioning
+ */
+.main-about-us {
+    margin-top: 2rem;
+    position: relative;
+    width: 600px;
+    margin-left: 4rem;
+}
+
+.About-us-banner {
+    width: 600px;
+    margin-bottom: -17rem;
+    margin-top: -15rem;
+}
+
+.about-us-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white !important;
+    font-size: 0.8rem !important;
+    text-align: center;
+    width: 400px;
+    font-weight: 300;
+    line-height: 1.6;
+    z-index: 2;
+    padding: 1rem;
+    margin-top: 8rem;
+}
+
+/**
+ * Main Content Login Form
+ */
+.main-content-image-login{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding-right: 5rem;
+}
+
+.login-image {
+    margin-top: 15rem;
+    margin-right: -24rem;
+    width: 520px;
+    height: auto;
+    object-fit: contain;
+}
+
+/**
+ * Responsive Design
+ * Mobile-first approach for smaller screens
+ */
+@media (max-width: 768px) {
+    .floating-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-content h1 {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .login-button {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+    }
+}
