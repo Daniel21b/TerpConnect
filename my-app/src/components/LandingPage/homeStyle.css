@@ -54,7 +54,7 @@
 }
 
 .login-button {
-    background-color: #E41936;
+    background-color: #df1212;
     color: #ffffff;
     border: none;
     border-radius: 23px;
@@ -165,37 +165,74 @@
     margin-bottom: 0;
 }
 
-/**
+/**************************************************
  * About Us Section
- * Overlay text on banner image with positioning
- */
+ **************************************************/
 .main-about-us {
-    margin-top: 2rem;
     position: relative;
     width: 600px;
-    margin-left: 4rem;
+    margin-top: 40rem;
+    margin-left: -38rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
 }
 
 .About-us-banner {
     width: 600px;
-    margin-bottom: -17rem;
-    margin-top: -15rem;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    
 }
 
+/* Title next to content */
+.about-us-title {
+    position: absolute;
+    left: 15%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: right;
+    z-index: 2;
+    width: 200px;
+    margin-bottom: 4rem;
+    
+}
+
+.about-us-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Content next to title */
 .about-us-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white !important;
-    font-size: 0.8rem !important;
-    text-align: center;
-    width: 400px;
+    left: 65%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.7rem;
     font-weight: 300;
-    line-height: 1.6;
+    text-align: left;
+    width: 60%;
+    line-height: 1.5;
     z-index: 2;
-    padding: 1rem;
-    margin-top: 8rem;
+}
+
+/* Optional highlight classes for colored text */
+.highlight-red {
+    color: #E41936; /* or your chosen shade of red */
+    font-weight: 500;
+}
+
+.highlight-yellow {
+    color: #FFC107; /* or your chosen shade of yellow */
+    font-weight: 500;
 }
 
 /**
@@ -256,4 +293,183 @@
         width: 100%;
         text-align: left;
     }
+}
+
+.highlight-text {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+@keyframes stripReveal {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.yellow-strip {
+    position: absolute;
+    right: 20px;  /* Adjust as needed */
+    top: 78%;
+    transform: translateY(-50%);
+    width: 400px;  /* Adjust size as needed */
+    height: auto;
+    z-index: -1;
+    animation: stripReveal 0.8s ease-out forwards;
+    animation-delay: 0.2s;  /* Slight delay after text appears */
+}
+
+.red-dot {
+    position: absolute;
+    right: -130px;  /* Adjust as needed */
+    top: 150%;
+    transform: translateY(-50%);
+    width: 100px;  /* Adjust size as needed */
+    height: auto;
+    z-index: 2;
+}
+
+.create-account-section {
+    position: absolute;
+    font-size: 0.5rem;
+    margin-top: 20rem;
+    margin-left: -81rem;
+    text-align: center;
+}
+
+.no-account-text {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.create-account-link {
+    color: #000;
+    margin-top: -1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.create-account-link:hover {
+    color: #E41936;
+    border-bottom-color: #E41936;
+}
+
+.arrow {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background-color: #df1212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid #eee;
+}
+
+.footer-text {
+    font-size: 0.7rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+}
+
+.login-form-overlay {
+    position: relative;
+    margin-top: -15rem;  /* Adjust to align with image */
+    margin-left: -20rem;  /* Adjust to align with image */
+}
+
+.login-inputs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+}
+
+.login-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    width: 400px;
+    outline: none;
+}
+
+.login-input:first-child {
+    margin-top: 120px;  /* Adjust for username field */
+}
+
+.login-input:nth-child(2) {
+    margin-top: 20px;  /* Adjust for password field */
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 400px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.forgot-password {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.login-submit-button {
+    width: 400px;
+    padding: 12px;
+    background: #FFD93D;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-submit-button:hover {
+    background: #FFE169;
 }
