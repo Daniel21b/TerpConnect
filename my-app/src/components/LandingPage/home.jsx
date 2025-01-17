@@ -117,6 +117,7 @@ const Home = () => {
         <div className="main-content-image-login">
           <img src={LoginForm} alt="Login" className="login-image" />
           <div className="login-form-overlay">
+            <p className="login-title"> Login in to your account</p>
             <div className="login-inputs">
               <input type="text" placeholder="Username" className="login-input" />
               <input type="password" placeholder="Password" className="login-input" />
