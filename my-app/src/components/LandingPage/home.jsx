@@ -12,8 +12,11 @@ import AboutUsBanner from "../../assets/images/AboutUsBanner.png";
 import YellowStrip from "../../assets/images/Yellow Strip.png";
 import RedDot from "../../assets/images/Red Dot.png";
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   /**
    * State for managing search placeholder animation
    */
@@ -49,6 +52,14 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  /**
+   * Handles the login form submission
+   * Navigates to the dashboard
+   */
+  const handleLoginClick = () => {
+    navigate('/dashboard');
+  };
+
   return (
     <div className="home-container">
       {/* Navigation Bar */}
@@ -71,7 +82,7 @@ const Home = () => {
               className="search-bar"
             />
           </div>
-          <button className="login-button">Login</button>
+          <button className="login-button" onClick={handleLoginClick}>Login</button>
         </div>
       </nav>
 
@@ -117,7 +128,7 @@ const Home = () => {
         <div className="main-content-image-login">
           <img src={LoginForm} alt="Login" className="login-image" />
           <div className="login-form-overlay">
-            <p className="login-title"> Login in to your account</p>
+            <p className="login-title">Login in to your account</p>
             <div className="login-inputs">
               <input type="text" placeholder="Username" className="login-input" />
               <input type="password" placeholder="Password" className="login-input" />
@@ -128,7 +139,12 @@ const Home = () => {
                 </label>
                 <a href="#" className="forgot-password">Forgot your password?</a>
               </div>
-              <button className="login-submit-button">Login</button>
+              <button 
+                className="login-submit-button" 
+                onClick={handleLoginClick}
+              >
+                Login
+              </button>
             </div>
           </div>
           <div className="create-account-section">
