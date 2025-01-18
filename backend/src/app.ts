@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import routes from './routes';
+import authRoutes from './Authentication/routes/auth.routes';
 
 const app = express();
 
@@ -15,7 +15,12 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api', routes);
+app.use('/api/auth', authRoutes);
+
+// Basic route for testing
+app.get('/', (req, res) => {
+  res.json({ message: 'TerpConnect API is running' });
+});
 
 // Error handling
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
