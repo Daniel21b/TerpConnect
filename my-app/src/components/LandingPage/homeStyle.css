@@ -2,7 +2,7 @@
  * Root container styles
  * Sets up the main application container with full viewport coverage
  */
-.home-container {
+ .home-container {
     margin: 0;
     padding: 0;
     background-color: #F6F6F6;
@@ -238,21 +238,24 @@
 /**
  * Main Content Login Form
  */
-.main-content-image-login{
+.main-content-image-login {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
     padding-right: 5rem;
+    position: relative;
 }
 
 .login-image {
+    position: absolute;
     margin-top: 15rem;
     margin-right: -24rem;
     width: 520px;
     height: auto;
     object-fit: contain;
+    z-index: 1;
 }
 
 /**
@@ -392,82 +395,145 @@
 }
 
 .login-form-overlay {
-    position: relative;
-    margin-top: -15rem;  /* Adjust to align with image */
-    margin-left: -20rem;  /* Adjust to align with image */
+    position: absolute;
+    margin-top: 12rem;
+    right: 12rem;
+    width: 180px;
+    height: 180px;
+    z-index: 2;
+}
+
+.login-title{
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100%;
+    margin-left: 3rem;
+    color: black;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .login-inputs {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 180px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 60px;
+    padding: 0 40px;
 }
 
 .login-input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #ddd;
-    padding: 8px 0;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-    width: 400px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 0;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    width: 260px;
     outline: none;
+    color: #000000;  /* Text color when typing */
+    transition: all 0.3s ease;
+}
+
+.login-input:focus {
+    border-bottom: 2px solid #FFD93D;
+    transform: translateX(5px);
+}
+
+.login-input::placeholder {
+    color: #666666;
+    opacity: 0.7;
 }
 
 .login-input:first-child {
-    margin-top: 120px;  /* Adjust for username field */
-}
-
-.login-input:nth-child(2) {
-    margin-top: 20px;  /* Adjust for password field */
+    margin-top: 90px;
 }
 
 .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    width: 400px;
+    margin-top: 0.3rem;
+    width: 260px;
+    color: #666;
+    position: relative;
 }
 
 .remember-me {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: #666;
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    color: #000000;
+    white-space: nowrap;
+    margin-top: 1rem;
 }
 
 .remember-me input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    border: 1px solid #ddd;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ddd;
     border-radius: 3px;
+    margin: 0;
+    accent-color: #FFD93D;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
+
+.login-title{
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100%;
+    margin-left: 5rem;
+    color: black;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.remember-me input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+.remember-me input[type="checkbox"]:checked {
+    border-color: #FFD93D;
+    background-color: #FFD93D;
+}
+
 
 .forgot-password {
     color: #666;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+}
+
+.forgot-password:hover {
+    color: #FFD93D;
 }
 
 .login-submit-button {
-    width: 400px;
-    padding: 12px;
+    width: 180px;
+    padding: 8px;
     background: #FFD93D;
     color: black;
     border: none;
     border-radius: 25px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-top: 0.5rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 1.2rem;
+
 }
 
 .login-submit-button:hover {
